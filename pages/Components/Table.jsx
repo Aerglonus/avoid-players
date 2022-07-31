@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 // import clientPromise from "../../lib/mongodb";
 import { Table, Input, Button } from "@nextui-org/react";
-import { DeleteIcon } from "./DeleteIcon";
+import { DeleteIcon } from "../../components/DeleteIcon";
 
 const DeleteUser = ({ pepegas }) => {
 	const router = useRouter();
