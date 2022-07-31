@@ -21,8 +21,10 @@ export default function Home({ pepegas }) {
 // 	};
 // }
 export async function getServerSideProps(context) {
+	let dev = process.env.NODE_ENV !== "production";
+	let { DEV_URL, PROD_URL } = process.env;
 	/* Making a call to the API and getting the data from the API. */
-	const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/avoid");
+	const response = await fetch(`${dev ? DEV_URL : PROD_URL}/api/avoid`);
 	/* Destructuring the data from the response.json() call. */
 	const { data } = await response.json();
 

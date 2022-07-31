@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 // import clientPromise from "../../lib/mongodb";
 import { Table, Input, Button } from "@nextui-org/react";
-import { DeleteIcon } from "./DeleteIcon";
+import { DeleteIcon } from "../../components/DeleteIcon";
 
 const DeleteUser = ({ pepegas }) => {
 	const router = useRouter();
@@ -11,12 +11,9 @@ const DeleteUser = ({ pepegas }) => {
 	};
 	async function handleDelete(id) {
 		try {
-			const res = await fetch(
-				process.env.NEXT_PUBLIC_BASE_URL + `api/avoid?id=${id}`,
-				{
-					method: "DELETE",
-				},
-			);
+			const res = await fetch(`api/avoid?id=${id}`, {
+				method: "DELETE",
+			});
 			if (res.ok) {
 				refreshData();
 			}
@@ -60,7 +57,7 @@ const AddUser = () => {
 	async function submitForm(e) {
 		e.preventDefault();
 		setLoading(true);
-		const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/avoid", {
+		const res = await fetch("/api/avoid", {
 			method: "POST",
 			body: JSON.stringify({
 				username: user,
