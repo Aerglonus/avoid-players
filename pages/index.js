@@ -1,4 +1,4 @@
-import DataTable from "./Components/Table";
+import DataTable from "../components/Table";
 // import clientPromise from "../lib/mongodb";
 export default function Home({ pepegas }) {
 	return (
