@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## NOTICE :
+If the component doesn't refresh after adding or trying to delete an entry, It's probably because the database cluster was shutdown by mongodb.
 ## Getting Started
 
 First, run the development server:
